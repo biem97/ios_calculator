@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ios_calculator/static/css/main.d709e1a3.chunk.css",
-    "main.js": "/ios_calculator/static/js/main.401e4ca7.chunk.js",
-    "main.js.map": "/ios_calculator/static/js/main.401e4ca7.chunk.js.map",
+    "main.js": "/ios_calculator/static/js/main.510a88f4.chunk.js",
+    "main.js.map": "/ios_calculator/static/js/main.510a88f4.chunk.js.map",
     "runtime-main.js": "/ios_calculator/static/js/runtime-main.cc5c539c.js",
     "runtime-main.js.map": "/ios_calculator/static/js/runtime-main.cc5c539c.js.map",
     "static/js/2.51c93a9f.chunk.js": "/ios_calculator/static/js/2.51c93a9f.chunk.js",
     "static/js/2.51c93a9f.chunk.js.map": "/ios_calculator/static/js/2.51c93a9f.chunk.js.map",
     "index.html": "/ios_calculator/index.html",
-    "precache-manifest.96ae8e5a9f58919ff0d78396136b984e.js": "/ios_calculator/precache-manifest.96ae8e5a9f58919ff0d78396136b984e.js",
+    "precache-manifest.02836f4e2a9c87ab569871bf901b45d9.js": "/ios_calculator/precache-manifest.02836f4e2a9c87ab569871bf901b45d9.js",
     "service-worker.js": "/ios_calculator/service-worker.js",
     "static/css/main.d709e1a3.chunk.css.map": "/ios_calculator/static/css/main.d709e1a3.chunk.css.map",
     "static/js/2.51c93a9f.chunk.js.LICENSE.txt": "/ios_calculator/static/js/2.51c93a9f.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.cc5c539c.js",
     "static/js/2.51c93a9f.chunk.js",
     "static/css/main.d709e1a3.chunk.css",
-    "static/js/main.401e4ca7.chunk.js"
+    "static/js/main.510a88f4.chunk.js"
   ]
 }
