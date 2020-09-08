@@ -1,0 +1,52 @@
+.body {
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: black;
+    width: 500px;
+    height: 900px;
+    border-radius: 12px;
+}
+ 
+.row {
+    height: 100px;
+    margin: 10px;
+}
+
+.display {
+    margin-top: 200px;
+    background-color: transparent;
+    font-size: 100px;
+    text-align: right;
+    color: white;
+    margin-bottom: 30px;
+    margin-right: 40px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 0px 10px;
+    color: white;
+    font-size: 50px;
+}
+    .btn-function {
+        background-color: #545350;
+    }
+    .btn-number {
+        background-color: #1a1515;
+    }
+    .btn-zero{
+        text-align: left;
+        border-radius: 50px;
+        height: 100px;
+        width: 220px;
+        padding-left: 20px;
+        margin-right: 10px;
+    }
+    .btn-expression {
+        background-color: #d49f0d;
+    }
+    
