@@ -1,52 +1,45 @@
 .body {
-    text-align: center;
-    margin: 10px auto;
-    padding: 10px;
     background-color: black;
-    width: 500px;
-    height: 900px;
-    border-radius: 12px;
-}
- 
-.row {
-    height: 100px;
-    margin: 10px;
+    color: white;
+    min-width: 540px !important;
+    max-width: 540px !important;
+    min-height: 900px !important;
 }
 
 .display {
-    margin-top: 200px;
-    background-color: transparent;
+    padding-top: 180px;
+    padding-right: 30px;
     font-size: 100px;
-    text-align: right;
-    color: white;
-    margin-bottom: 30px;
-    margin-right: 40px;
+    font-weight: lighter;
 }
+.row {
+    width: 500px;
+    margin: 10px auto !important;
+}
+
 
 button {
     height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: 1px solid white;
-    margin: 0px 10px;
-    color: white;
-    font-size: 50px;
+    border-radius: 100% !important;
+    margin: 0px auto !important;
+    color: white !important;
+    font-size: 35px !important;
+    font-weight: bold !important;
+    border-color: black !important;
 }
-    .btn-function {
-        background-color: #545350;
-    }
-    .btn-number {
-        background-color: #1a1515;
-    }
-    .btn-zero{
-        text-align: left;
-        border-radius: 50px;
-        height: 100px;
-        width: 220px;
-        padding-left: 20px;
-        margin-right: 10px;
-    }
-    .btn-expression {
-        background-color: #d49f0d;
-    }
-    
+
+.btn-outline-warning {
+    background-color: orange !important;
+}
+
+.btn-outline-success {
+    background-color: gray !important;
+}
+
+.btn-outline-secondary {
+    background-color:  rgb(37, 36, 34) !important;
+}
+
+.btn-zero {
+    border-radius: 50px !important;
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { evaluate } from "mathjs";
 import AppButton from "./AppButton";
 import AppDisplay from "./AppDisplay";
+import {Container, Row, Col } from 'react-bootstrap';
 
 export default class Main extends Component {
   constructor(props) {
@@ -9,21 +10,30 @@ export default class Main extends Component {
     this.state = {
       ac: "AC",
       display: "0",
-      expression: Array(3).fill(null),
+      expression: "",
     };
   }
 
+  // Add comma into display
+  numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  removeComma(x) {
+    return x.toString().replace(/,/gi,"");
+  }
+
   handleClick = (ev) => {
-    /*
+
     if (ev.target.value ==="+" || ev.target.value ==="-" || ev.target.value ==="x" || ev.target.value ==="/" ) {
         this.setState({
-            previousValue: this.state.previousValue.concat(ev.target.value),
-            display: evaluate(`${this.state.previousValue}`)
+          display:
+            this.state.display === "0"
+              ? "0"
+              : this.state.display + ev.target.value,
+          ac: this.state.display === "0" ? "AC" : "C",
         })
     }
-    else 
-    */
-    if (ev.target.value === "+/-"){
+    else if (ev.target.value === "+/-"){
         this.setState({
             display: this.state.display[0] === "-" ? this.state.display.slice(1,) : "-".concat(this.state.display),
         })
@@ -38,7 +48,7 @@ export default class Main extends Component {
           this.state.display === "0"
             ? ev.target.value
             : this.state.display + ev.target.value,
-        ac: "C",
+        ac: this.state.display === "0" ? "AC" : "C",
       });
     }
   };
@@ -60,40 +70,42 @@ export default class Main extends Component {
 
   render() {
     return (
-      <div className="body">
-        <div className="row display">
-          <AppDisplay display={this.state.display} />
-        </div>
-        <div className="row">
-          <AppButton onClick={this.allClear} value={this.state.ac} type="function" />
-          <AppButton onClick={this.handleClick} value={"+/-"} type="function" />
-          <AppButton onClick={this.handleClick} value={"%"} type="function" />
-          <AppButton onClick={this.handleClick} value={"/"} type="expression" />
-        </div>
-        <div className="row">
-          <AppButton onClick={this.handleClick} value={7} type="number" />
-          <AppButton onClick={this.handleClick} value={8} type="number" />
-          <AppButton onClick={this.handleClick} value={9} type="number" />
-          <AppButton onClick={this.handleClick} value={"x"} type="expression" />
-        </div>
-        <div className="row">
-          <AppButton onClick={this.handleClick} value={4} type="number" />
-          <AppButton onClick={this.handleClick} value={5} type="number" />
-          <AppButton onClick={this.handleClick} value={6} type="number" />
-          <AppButton onClick={this.handleClick} value={"-"} type="expression" />
-        </div>
-        <div className="row">
-          <AppButton onClick={this.handleClick} value={1} type="number" />
-          <AppButton onClick={this.handleClick} value={2} type="number" />
-          <AppButton onClick={this.handleClick} value={3} type="number" />
-          <AppButton onClick={this.handleClick} value={"+"} type="expression" />
-        </div>
-        <div className="row">
-          <AppButton onClick={this.handleClick} value={"0"} type="number" />
-          <AppButton onClick={this.handleClick} value={"."} type="number" />
-          <AppButton onClick={this.equal} value={"="} type="expression" />
-        </div>
-      </div>
+      <>
+      <Container className="body">
+          <Row className="flex-row-reverse display">
+            <AppDisplay display={this.state.display} />
+          </Row>
+          <Row >
+            <Col><AppButton onClick={this.allClear} value={this.state.ac} type="outline-success" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={"+/-"} type="outline-success" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={"%"} type="outline-success" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={"/"} type="outline-warning" /></Col>
+          </Row>
+          <Row>
+            <Col><AppButton onClick={this.handleClick} value={7} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={8} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={9} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={"x"} type="outline-warning" /></Col>
+          </Row>
+          <Row>
+            <Col><AppButton onClick={this.handleClick} value={4} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={5} type="outline-secondary"/></Col>
+            <Col><AppButton onClick={this.handleClick} value={6} type="outline-secondary"/></Col>
+            <Col><AppButton onClick={this.handleClick} value={"-"} type="outline-warning"/></Col>
+          </Row>
+          <Row>
+            <Col><AppButton onClick={this.handleClick} value={1} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={2} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={3} type="outline-secondary" /></Col>
+            <Col><AppButton onClick={this.handleClick} value={"+"} type="outline-warning" /></Col>
+          </Row>
+          <Row>
+            <Col xs={6}><AppButton onClick={this.handleClick} value={"0"} type="outline-secondary btn-zero" /></Col>
+            <Col xs={3}><AppButton onClick={this.handleClick} value={"."} type="outline-secondary" /></Col>
+            <Col xs={3}><AppButton onClick={this.equal} value={"="} type="outline-warning" /></Col>
+          </Row>
+      </Container>
+      </>
     );
   }
 }
